@@ -1,9 +1,9 @@
-version: "1.0.0"
+version: "3.8"
 services:
   api:
     build:
       context: api
-    image: docker.io/yusufkolawole/dockerized-django
+    image: docker.io/yusufkolawole/dockerize-django
     expose:
       - 8000
     container_name: api
