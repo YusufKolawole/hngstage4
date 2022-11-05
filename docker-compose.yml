@@ -1,0 +1,25 @@
+version: "1.0.0"
+services:
+  api:
+    build:
+      context: api
+    image: docker.io/yusufkolawole/dockerized-django
+    expose:
+      - 8000
+    container_name: api
+    restart: always
+    networks:
+      - web-app
+
+  frontend:
+    build:
+      context: frontend
+    image: docker.io/yusufkolawole/dockerized-react
+    ports:
+      - 3000:3000
+    container_name: frontend
+    restart: always
+    networks:
+      - web-app
+networks:
+  web-app:
